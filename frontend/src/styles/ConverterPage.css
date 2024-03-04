@@ -132,10 +132,9 @@
 
   .code-box,
   .converted-code {
-    /* This ensures both the code box and the converted code box have the same width on small screens */
     width: 90%;
     margin: 10px 0;
-    text-align: center; /* This centers the content; adjust as necessary */
+    text-align: center;
   }
 
   .arrow-container {
