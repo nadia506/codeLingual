@@ -1,2 +1,1 @@
-python-dotenv
-openai
+Flask==2.2.3
