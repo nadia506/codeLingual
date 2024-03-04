@@ -9,8 +9,10 @@ const ConverterPage = () => {
   const [codeSnippet, setCodeSnippet] = useState("");
   const [convertedCode, setConvertedCode] = useState("");
   const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   async function solveEquation(source, target, content) {
+    setIsLoading(true); // Start loading
     try {
       const response = await fetch("http://127.0.0.1:5001/convert-code", {
         method: "POST",
@@ -30,16 +32,17 @@ const ConverterPage = () => {
       }
 
       const data = await response.json();
-
-      return data.response[0];
+      setConvertedCode(data.response[0]); // Assuming data.response[0] is the converted code
     } catch (error) {
       console.error("Failed to solve equation:", error);
+      // Optionally, handle the error (e.g., set an error message in state)
+    } finally {
+      setIsLoading(false); // End loading regardless of outcome
     }
   }
 
   const handleConvert = async (sourceLanguage, targetLanguage, input) => {
-    const result = await solveEquation(sourceLanguage, targetLanguage, input);
-    setConvertedCode(result); // Assuming result is the converted code you want to display
+    await solveEquation(sourceLanguage, targetLanguage, input);
   };
 
   return (
@@ -61,6 +64,7 @@ const ConverterPage = () => {
             <option value="Python">Python</option>
             <option value="Java">Java</option>
             <option value="C">C</option>
+            <option value="C++">C++</option>
           </select>
           <span>&#8594;</span>
           <select
@@ -70,13 +74,19 @@ const ConverterPage = () => {
             <option value="Python">Python</option>
             <option value="Java">Java</option>
             <option value="C">C</option>
+            <option value="C++">C++</option>
           </select>
         </div>
         <button
           onClick={() => handleConvert(sourceLanguage, targetLanguage, input)}
         >
-          convert
+          Convert
         </button>
+        {isLoading && (
+          <div className="loading-indicator">
+            <div className="loader"></div>
+          </div>
+        )}
       </div>
       <div className="code-container">
         <CodeBox setInput={setInput}></CodeBox>

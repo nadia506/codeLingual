@@ -39,7 +39,7 @@ def convert_code():
             run = client.beta.threads.runs.create(
                 thread_id=thread.id,
                 assistant_id=assistant.id,
-                instructions="Please address the user's question. Just answer with the translated code without any explainations or any other words",
+                instructions="Please address the user's question. Just answer with the translated code without any explainations or any other words. when you are asked to convert without any codes, prompt the user to paste their code into the code box",
             )
 
             while True:

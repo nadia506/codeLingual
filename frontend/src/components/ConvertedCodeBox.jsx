@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 
 const ConvertedCodeBox = ({ convertedCode }) => {
   return (
-    <div className="converted-code">
+    <div
+      className="converted-code"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
       <h2>Converted Code</h2>
       <textarea
         readOnly
