@@ -19,7 +19,7 @@ const CodeBox = ({ setInput }) => {
         onChange={(e) => onChangeCode(e.target.value)}
         placeholder="Paste your code here..."
         rows={25}
-        cols={50}
+        cols={60}
         style={{
           fontFamily:
             "'Fira Code', 'Monaco', 'Menlo', 'Consolas', 'Courier New', monospace",
