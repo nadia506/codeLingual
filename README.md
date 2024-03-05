@@ -6,11 +6,11 @@ Code Converter is a web application that allows users to convert code snippets b
 
 ## Links
 
-| Repository         | https://github.com/cs421sp23-homework/sp23-oose-project-team-16 |
-| ------------------ | --------------------------------------------------------------- |
+| Repository         | https://github.com/nadia506/codelingual        |
+| ------------------ | ---------------------------------------------- |
 |                    |
-| Deployed App       | https://splendorous-liger-2eb2ec.netlify.app                    |
-| Deployed Flask API | https://codelingual-a447e65d1dbb.herokuapp.com                  |
+| Deployed App       | https://splendorous-liger-2eb2ec.netlify.app   |
+| Deployed Flask API | https://codelingual-a447e65d1dbb.herokuapp.com |
 
 ## Technologies Used
 
