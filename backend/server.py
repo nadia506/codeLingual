@@ -17,7 +17,9 @@ CORS(app, resources={r"/convert-code": {"origins": "http://localhost:3000"}}, su
 # Your Flask routes...
 
 client = OpenAI(api_key=API_KEY)
-
+@app.route('/')
+def home():
+    return 'Hello, World!'
 @app.route("/convert-code", methods=['POST'])
 def convert_code():
    
