@@ -9,8 +9,10 @@ load_dotenv()
 API_KEY = os.environ['OPENAI_API_KEY']
 app = Flask(__name__)
 
+allowed_origins = ["http://localhost:3000", "https://splendorous-liger-2eb2ec.netlify.app"]
+
 # Initialize CORS with default settings or specific origins
-CORS(app, resources={r"/convert-code": {"origins": "http://localhost:3000"}}, supports_credentials=True)
+CORS(app, resources={r"/convert-code": {"origins": allowed_origins}}, supports_credentials=True)
 
 
 
