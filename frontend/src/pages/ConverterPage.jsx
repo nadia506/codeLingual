@@ -6,7 +6,7 @@ import ConvertedCodeBox from "../components/ConvertedCodeBox";
 const ConverterPage = () => {
   const [sourceLanguage, setSourceLanguage] = useState("Python");
   const [targetLanguage, setTargetLanguage] = useState("Java");
-  const [codeSnippet, setCodeSnippet] = useState("");
+
   const [convertedCode, setConvertedCode] = useState("");
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
