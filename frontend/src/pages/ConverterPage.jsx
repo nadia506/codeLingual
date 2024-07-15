@@ -25,18 +25,21 @@ const ConverterPage = () => {
   async function solveEquation(source, target, content) {
     setIsLoading(true);
     try {
-      const response = await fetch("http://127.0.0.1:5001//convert-code", {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          source_code: content,
-          source_language: source,
-          target_language: target,
-        }),
-      });
+      const response = await fetch(
+        "https://codelingual-5277541f3102.herokuapp.com/convert-code",
+        {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            source_code: content,
+            source_language: source,
+            target_language: target,
+          }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
