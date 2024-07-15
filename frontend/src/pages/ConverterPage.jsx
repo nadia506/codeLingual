@@ -26,7 +26,7 @@ const ConverterPage = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        "https://codelingual-a447e65d1dbb.herokuapp.com/convert-code",
+        "https://codelingual-5277541f3102.herokuapp.com/convert-code",
         {
           method: "POST",
           credentials: "include",
