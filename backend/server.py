@@ -9,7 +9,7 @@ load_dotenv()
 API_KEY = os.environ['OPENAI_API_KEY']
 app = Flask(__name__)
 
-allowed_origins = ["http://localhost:3000", "https://codelingual-converter.netlify.app/"]
+allowed_origins = ["http://localhost:3000", "https://codelingual-converter.netlify.app"]
 
 
 CORS(app, resources={r"/convert-code": {"origins": allowed_origins}}, supports_credentials=True)
