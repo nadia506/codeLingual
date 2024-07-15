@@ -5,9 +5,9 @@ html {
 }
 
 .container {
-  background-size: cover; /* Ensure the background image covers the entire container */
+  background-size: cover;
   background-position: center;
-  background-color: rgb(154, 183, 236);
+  background-color: grey;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -16,7 +16,7 @@ html {
 
 .content {
   text-align: center;
-  color: white; /* Text color */
+  color: white;
 }
 
 .title {
@@ -32,7 +32,7 @@ html {
 .link {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #ff6347;
+  background-color: black;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -44,5 +44,5 @@ html {
 }
 
 .highlight {
-  color: #ff6347; /* Highlight color */
+  color: black;
 }

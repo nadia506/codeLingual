@@ -11,12 +11,12 @@ app = Flask(__name__)
 
 allowed_origins = ["http://localhost:3000", "https://splendorous-liger-2eb2ec.netlify.app"]
 
-# Initialize CORS with default settings or specific origins
+
 CORS(app, resources={r"/convert-code": {"origins": allowed_origins}}, supports_credentials=True)
 
 
 
-# Your Flask routes...
+
 
 client = OpenAI(api_key=API_KEY)
 @app.route('/')
@@ -43,7 +43,7 @@ def convert_code():
             run = client.beta.threads.runs.create(
                 thread_id=thread.id,
                 assistant_id=assistant.id,
-                instructions="Please address the user's question. Just answer with the translated code without any explainations or any other words. when you are asked to convert without any codes, prompt the user to paste their code into the code box",
+                instructions="Please address the user's question. Just answer with the translated code without any explainations or any other words.  do not surround your answer with ```java or anything. when you are asked to convert without any codes, prompt the user to paste their code into the code box.",
             )
 
             while True:
